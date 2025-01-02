@@ -1,0 +1,16 @@
+/Users/muhamedn/Movies/checkpointApplication/src/main/java/com/amdocs/queryexec/utilities/repository/EnrollmentRepository.java
+/Users/muhamedn/Movies/checkpointApplication/src/main/java/com/amdocs/queryexec/utilities/controller/AdminController.java
+/Users/muhamedn/Movies/checkpointApplication/src/main/java/com/amdocs/queryexec/utilities/service/StudentService.java
+/Users/muhamedn/Movies/checkpointApplication/src/main/java/com/amdocs/queryexec/utilities/model/Course.java
+/Users/muhamedn/Movies/checkpointApplication/src/main/java/com/amdocs/queryexec/utilities/service/CourseService.java
+/Users/muhamedn/Movies/checkpointApplication/src/main/java/com/amdocs/queryexec/utilities/repository/CourseRepository.java
+/Users/muhamedn/Movies/checkpointApplication/src/main/java/com/amdocs/queryexec/utilities/config/SecurityConfig.java
+/Users/muhamedn/Movies/checkpointApplication/src/main/java/com/amdocs/queryexec/utilities/exception/GlobalExceptionHandler.java
+/Users/muhamedn/Movies/checkpointApplication/src/main/java/com/amdocs/queryexec/utilities/controller/AuthController.java
+/Users/muhamedn/Movies/checkpointApplication/src/main/java/org/example/Application.java
+/Users/muhamedn/Movies/checkpointApplication/src/main/java/com/amdocs/queryexec/utilities/controller/StudentController.java
+/Users/muhamedn/Movies/checkpointApplication/src/main/java/com/amdocs/queryexec/utilities/service/EnrollmentService.java
+/Users/muhamedn/Movies/checkpointApplication/src/main/java/com/amdocs/queryexec/utilities/model/Enrollment.java
+/Users/muhamedn/Movies/checkpointApplication/src/main/java/com/amdocs/queryexec/utilities/model/Student.java
+/Users/muhamedn/Movies/checkpointApplication/src/main/java/com/amdocs/queryexec/utilities/repository/StudentRepository.java
+/Users/muhamedn/Movies/checkpointApplication/src/main/java/com/amdocs/queryexec/utilities/exception/StudentRegistrationException.java
