@@ -1,0 +1,15 @@
+how to run application 
+
+1- first login to mySql and run the script that in the file script database - the script will create studet/course/enrollment table 
+
+2-go to checkpointApplication/src/main/resources/application.yml and check what server.port if it for example 6060 
+you will use this port in your postman calls
+
+3- run the application by the command mvn spring-boot:run  in your IDE or your local terminal
+
+4-copy the postman colllection from admin-student-login request.postman_collection.json 
+ then  import to postman by use import->Raw text -> paste it
+and then you need to chnage the port in any run to 6060
+for example :http://localhost:6060/admin/allStudents
+
+
