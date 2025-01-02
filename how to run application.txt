@@ -6,6 +6,7 @@ how to run application
 you will use this port in your postman calls
 
 3- run the application by the command mvn spring-boot:run  in your IDE or your local terminal
+you can also open src/main/java/org/example/Application.java and run debug in your IDE
 
 4-copy the postman colllection from admin-student-login request.postman_collection.json 
  then  import to postman by use import->Raw text -> paste it
