@@ -1,0 +1,640 @@
+{
+	"info": {
+		"_postman_id": "a05fd1ef-78b2-4489-bf34-7afa7f03058a",
+		"name": "admin/student/login request",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "admin get all student",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:6069/admin/allStudents",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6069",
+					"path": [
+						"admin",
+						"allStudents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin get all courses",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:6069/admin/allCourses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6069",
+					"path": [
+						"admin",
+						"allCourses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin add/update course",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:6069/admin/deleteCourse?courseId=234522",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6069",
+					"path": [
+						"admin",
+						"deleteCourse"
+					],
+					"query": [
+						{
+							"key": "courseId",
+							"value": "234522"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin add course Copy",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\":\"234521\",\n  \"courseName\": \"Introduction to database\",\n  \"description\": \"A beginner course on programming data but meduim.\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:6069/admin/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6069",
+					"path": [
+						"admin",
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin delete record for stuedenid in courseid",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:6069/admin/deleteRecord?studentId=88&courseId=234521",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6069",
+					"path": [
+						"admin",
+						"deleteRecord"
+					],
+					"query": [
+						{
+							"key": "studentId",
+							"value": "88"
+						},
+						{
+							"key": "courseId",
+							"value": "234521"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin add/update record for stuedenid in courseid Copy",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:6069/admin/addRecord?studentId=88&courseId=234520&record=99",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6069",
+					"path": [
+						"admin",
+						"addRecord"
+					],
+					"query": [
+						{
+							"key": "studentId",
+							"value": "88"
+						},
+						{
+							"key": "courseId",
+							"value": "234520"
+						},
+						{
+							"key": "record",
+							"value": "99"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin read record",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:6069/admin/readRecord?studentId=88&courseId=234521",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6069",
+					"path": [
+						"admin",
+						"readRecord"
+					],
+					"query": [
+						{
+							"key": "studentId",
+							"value": "88"
+						},
+						{
+							"key": "courseId",
+							"value": "234521"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin add/update student",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 9229,\n    \"name\": \"bard55\",\n    \"email\": \"bard45.doe@example.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:6069/admin/addStudents",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6069",
+					"path": [
+						"admin",
+						"addStudents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete student",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 88,\n    \"name\": \"besan\",\n    \"email\": \"bess.doe@example.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:6069/admin/deleteCourse?studentId=88",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6069",
+					"path": [
+						"admin",
+						"deleteCourse"
+					],
+					"query": [
+						{
+							"key": "studentId",
+							"value": "88"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleet course",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 88,\n    \"name\": \"besan\",\n    \"email\": \"bess.doe@example.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:6069/admin/deleteCourse?courseId=234521",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6069",
+					"path": [
+						"admin",
+						"deleteCourse"
+					],
+					"query": [
+						{
+							"key": "courseId",
+							"value": "234521"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "student login to get session key",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "student",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "student",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Session-Key",
+						"value": "ac0814de-db28-4c51-bd5d-106910f8f3d4",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:6069/auth/studentLogin?specialKey=548f35b9-4a83-4524-83ff-758c69626a99",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6069",
+					"path": [
+						"auth",
+						"studentLogin"
+					],
+					"query": [
+						{
+							"key": "specialKey",
+							"value": "548f35b9-4a83-4524-83ff-758c69626a99"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin register to course",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Session-Key",
+						"value": "d65b6c76-3e46-408e-9d13-2967256bbf6c",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:6069/students/register?courseId=234520",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6069",
+					"path": [
+						"students",
+						"register"
+					],
+					"query": [
+						{
+							"key": "courseId",
+							"value": "234520"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "student cancell register to course Copy",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "student",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "student",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Session-Key",
+						"value": "01f2755b-aa3d-4c67-82dc-6b97d9dd09ae",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:6069/students/cancelRegistration?courseId=234521",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6069",
+					"path": [
+						"students",
+						"cancelRegistration"
+					],
+					"query": [
+						{
+							"key": "courseId",
+							"value": "234521"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

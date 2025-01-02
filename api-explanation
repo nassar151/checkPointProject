@@ -1,0 +1,534 @@
+# Admin API Documentation
+
+Endpoint:  
+URL: /admin/addStudents
+Method: POST
+Content-Type: application/json
+Request Body:
+{
+  "id": 1,
+  "name": "John Doe",
+  "specialKey": "unique-key-123"
+}
+**Response:**
+- **Status Code:** `200 OK`
+body response
+{
+    "studentId": "67",
+    "specialKey": "8f37dcde-0d4c-48fd-a47c-97b17e2da48e"
+}
+- **Content-Type:** `application/json`
+- **Body:**
+
+Status Code: 400 Bad Request
+Content-Type: application/json
+Body:
+{
+  "error": "Invalid request body"
+}
+
+Status Code: 500 Internal Server Error
+Content-Type: application/json
+Body:
+{
+  "error": "An unexpected error occurred"
+}
+This response indicates that an unexpected error occurred on the server while processing the request.
+
+Description:this endpoint create student
+
+=========================================================================================================================================================================================================================
+Delete Student Endpoint Documentation
+Endpoint:  
+URL: /admin/deleteStudent
+Method: DELETE
+Content-Type: application/json
+Request Parameters:  
+studentId: The unique identifier of the student to be deleted. This is a required parameter and should be passed as a query parameter.
+Response:
+Successful Response
+Status Code: 200 OK
+Content-Type: application/json
+Body:
+
+This response indicates that the student was successfully deleted from the system.
+{
+  "message": "Student deleted successfully with ID: {studentId}"
+}
+
+Error Responses
+Student Not Found  
+Status Code: 404 Not Found
+Content-Type: application/json
+Body:
+{
+  "error": "Failed to delete: No student found with ID: {studentId}"
+}
+This response indicates that no student was found with the provided ID.  
+Internal Server Error  
+Status Code: 500 Internal Server Error
+Content-Type: application/json
+Body:
+{
+  "error": "An unexpected error occurred"
+}
+This response indicates that an unexpected error occurred on the server while processing the request. 
+
+Description:this endpoint delete student
+=========================================================================================================================================================================================================================
+Read Record Endpoint Documentation
+Endpoint:  
+URL: /admin/readRecord
+Method: GET
+Content-Type: application/json
+Request Parameters:  
+studentId: The unique identifier of the student. This is a required parameter and should be passed as a query parameter.
+courseId: The unique identifier of the course. This is a required parameter and should be passed as a query parameter.
+Response:
+Successful Response
+Status Code: 200 OK
+Content-Type: application/json
+Body:
+This response indicates that the enrollment record for the specified student and course was successfully retrieve
+{
+  "record": "Some record data for this enrollment",
+  "courseName": "  "courseId": "Course ID"
+}
+
+Error Responses
+Student Not Found  
+Status Code: 404 Not Found
+Content-Type: application/json
+Body:
+{
+  "error": "Student not found with ID: {studentId}"
+}
+This response indicates that no student was found with the provided ID.  
+Course Not Found  
+Status Code: 404 Not Found
+Content-Type: application/json
+Body:
+{
+  "error": "Course not found with ID: {courseId}"
+}
+This response indicates that no course was found with the provided ID.  
+Enrollment Not Found  
+Status Code: 404 Not Found
+Content-Type: application/json
+Body:
+{
+  "error": "Enrollment not found for studentId: {studentId} and courseId: {courseId}"
+}
+This response indicates that no enrollment record was found for the provided student and course IDs.  
+Internal Server Error  
+Status Code: 500 Internal Server Error
+Content-Type: application/json
+Body:
+{
+  "error": "An unexpected error occurred"
+}
+This response indicates that an unexpected error occurred on the server while processing the request.  
+Description: This endpoint is used to retrieve the enrollment record for a specific student and course. The studentId and courseId parameters must be provided in the query string. The server will respond with the enrollment record if found, or an error message if the student, course, or enrollment record is not found, or if an internal error occurs.
+=========================================================================================================================================================================================================================
+Add Record Endpoint Documentation
+Endpoint:  
+URL: /admin/addRecord
+Method: POST
+Content-Type: application/json
+Request Parameters:  
+studentId: The unique identifier of the student. This is a required parameter and should be passed as a query parameter.
+courseId: The unique identifier of the course. This is a required parameter and should be passed as a query parameter.
+record: The record data for the enrollment. This is a required parameter and should be passed as a query parameter.
+Response:
+Successful Response
+Status Code: 200 OK
+Content-Type: application/json
+Body:
+
+
+This response indicates that the enrollment record for the specified student and course was successfully added or updated. The response body contains the record data, course name, and course ID.
+{
+  "record": "Some record data for this enrollment",
+  "courseName": "Courseid",
+}
+
+Error Responses
+Student Not Found  
+Status Code: 404 Not Found
+Content-Type: application/json
+Body:
+{
+  "error": "Student not found with ID: {studentId}"
+}
+This response indicates that no student was found with the provided ID.  
+Course Not Found  
+Status Code: 404 Not Found
+Content-Type: application/json
+Body:
+{
+  "error": "Course not found with ID: {courseId}"
+}
+This response indicates that no course was found with the provided ID.  
+Internal Server Error  
+Status Code: 500 Internal Server Error
+Content-Type: application/json
+Body:
+{
+  "error": "An unexpected error occurred"
+}
+This response indicates that an unexpected error occurred on the server while processing the request.  
+Description: This endpoint is used to add or update the enrollment record for a specific student and course. The studentId, courseId, and record parameters must be provided in the query string. The server will respond with the enrollment record if the operation is successful, or an error message if the student, course, or an internal error occurs.
+=========================================================================================================================================================================================================================
+Delete Record Endpoint Documentation
+Endpoint:  
+URL: /admin/deleteRecord
+Method: DELETE
+Content-Type: application/json
+Request Parameters:  
+studentId: The unique identifier of the student. This is a required parameter and should be passed as a query parameter.
+courseId: The unique identifier of the course. This is a required parameter and should be passed as a query parameter.
+Response:
+Successful Response
+Status Code: 200 OK
+Content-Type: application/json
+Body:
+
+
+
+This response indicates that the enrollment record for the specified student and course was successfully deleted. 
+  "message": "Enrollment record deleted successfully for studentId: {studentId} and courseId: {courseId}"
+
+
+Error Responses
+Student Not Found  
+Status Code: 404 Not Found
+Content-Type: application/json
+Body:
+{
+  "error": "Student not found with ID: {studentId}"
+}
+This response indicates that no student was found with the provided ID.  
+Course Not Found  
+Status Code: 404 Not Found
+Content-Type: application/json
+Body:
+{
+  "error": "Course not found with ID: {courseId}"
+}
+This response indicates that no course was found with the provided ID.  
+Enrollment Not Found  
+Status Code: 404 Not Found
+Content-Type: application/json
+Body:
+{
+  "error": "Enrollment not found for studentId: {studentId} and courseId: {courseId}"
+}
+This response indicates that no enrollment record was found for the provided student and course IDs.  
+Internal Server Error  
+Status Code: 500 Internal Server Error
+Content-Type: application/json
+Body:
+{
+  "error": "An unexpected error occurred"
+}
+This response indicates that an unexpected error occurred on the server while processing the request.  
+Description: This endpoint is used to delete the enrollment record for a specific student and course. The studentId and courseId parameters must be provided in the query string. The server will respond with a success message if the operation is successful, or an error message if the student, course, or enrollment record is not found, or if an internal error occurs.
+=========================================================================================================================================================================================================================
+Create Course Endpoint Documentation
+Endpoint:  
+URL: /admin/courses
+Method: POST
+Content-Type: application/json
+Request Body:
+{
+  "id":"234520",
+  "courseName": "Introduction to database",
+  "description": "A beginner course on programming data."
+}
+This request body should contain the details of the course to be created
+
+This response indicates that the ecourse created successfully. 
+{
+    "id": 234520,
+    "description": "A beginner course on programming data.",
+    "courseName": "Introduction to database"
+}
+
+Error Responses
+Internal Server Error
+Status Code: 500 Internal Server Error
+Content-Type: application/json
+Body:
+{
+  "error": "An unexpected error occurred"
+}
+This response indicates that an unexpected error occurred on the server while processing the request.  
+Description: This endpoint is used to create a new course. The course details must be provided in the request body. The server will respond with the details of the created course if the operation is successful, or an error message if an internal error occurs.
+=========================================================================================================================================================================================================================
+Delete Course Endpoint Documentation
+Endpoint:  
+URL: /admin/deleteCourse
+Method: DELETE
+Content-Type: application/json
+Request Parameters:  
+courseId: The unique identifier of the course. This is a required parameter and should be passed as a query parameter.
+Response:
+Successful Response
+Status Code: 200 OK
+Content-Type: application/json
+Body:
+
+This response indicates that the course with the specified ID was successfully deleted.
+{
+  "message": "Course deleted successfully with ID: {courseId}"
+}
+
+Error Responses
+Course Not Found  
+Status Code: 404 Not Found
+Content-Type: application/json
+Body:
+{
+  "error": "Course not found with ID: {courseId}"
+}
+This response indicates that no course was found with the provided ID.  
+Internal Server Error  
+Status Code: 500 Internal Server Error
+Content-Type: application/json
+Body:
+{
+  "error": "An unexpected error occurred"
+}
+This response indicates that an unexpected error occurred on the server while processing the request.  
+Description: This endpoint is used to delete a course by its ID. The courseId parameter must be provided in the query string. The server will respond with a success message if the operation is successful, or an error message if the course is not found or if an internal error occurs.
+=========================================================================================================================================================================================================================
+Get All Students with Courses Endpoint Documentation
+Endpoint:  
+URL: /admin/allStudents
+Method: GET
+Content-Type: application/json
+Response:
+Successful Response
+Status Code: 200 OK
+Content-Type: application/json
+Body:
+
+This response contains a list of students along with the courses they are enrolled in.
+[
+    {
+        "student": {
+            "id": 1,
+            "name": "John Doe",
+            "email": "john.doe@example.com",
+            "specialKey": "8b0dc8eb-3587-4135-9d2a-ecb5efd22b87"
+        },
+        "courses": []
+    },
+    {
+        "student": {
+            "id": 6,
+            "name": "nassar",
+            "email": "muhamed.doe@example.com",
+            "specialKey": "2a8a7787-4fa6-40f7-94b6-8f8ab8576fae"
+        },
+        "courses": [
+            {
+                "id": 234518,
+                "description": "A beginner course on programming concepts.",
+                "courseName": "Introduction to database"
+            },
+            {
+                "id": 234519,
+                "description": "A beginner course on programming data but haaard.",
+                "courseName": "Introduction to database"
+            },
+            {
+                "id": 234520,
+                "description": "A beginner course on programming data but meduim.",
+                "courseName": "Introduction to database"
+            }
+        ]
+    },
+    {
+        "student": {
+            "id": 67,
+            "name": "ankaa",
+            "email": "anka.doe@example.com",
+            "specialKey": "8f37dcde-0d4c-48fd-a47c-97b17e2da48e"
+        },
+        "courses": [
+            {
+                "id": 234519,
+                "description": "A beginner course on programming data but haaard.",
+                "courseName": "Introduction to database"
+            },
+            {
+                "id": 234520,
+                "description": "A beginner course on programming data but meduim.",
+                "courseName": "Introduction to database"
+            }
+        ]
+    }
+]
+
+Error Responses
+Internal Server Error
+Status Code: 500 Internal Server Error
+Content-Type: application/json
+Body:
+{
+  "error": "An unexpected error occurred"
+}
+This response indicates that an unexpected error occurred on the server while processing the request.  
+Description: This endpoint is used to retrieve a list of all students along with the courses they are enrolled in. The server will respond with the details of the students and their courses if the operation is successful, or an error message if an internal error occurs.
+=========================================================================================================================================================================================================================
+Get All Courses with Students Endpoint Documentation
+Endpoint:  
+URL: /admin/allCourses
+Method: GET
+Content-Type: application/json
+Response:
+Successful Response
+Status Code: 200 OK
+Content-Type: application/json
+Body:
+
+This response contains a list of courses along with the students enrolled in each course.
+[
+  {
+    "course": {
+      "id": "Course ID",
+      "courseName": "Course Name",
+      "courseDescription": "Course Description"
+    },
+    "students": [
+      {
+        "id": "Student ID",
+        "name": "Student Name",
+        "specialKey": "Special Key"
+      }
+    ]
+  }
+]
+
+Error Responses
+Internal Server Error
+Status Code: 500 Internal Server Error
+Content-Type: application/json
+Body:
+{
+  "error": "An unexpected error occurred"
+}
+This response indicates that an unexpected error occurred on the server while processing the request.  
+Description: This endpoint is used to retrieve a list of all courses along with the students enrolled in each course. The server will respond with the details of the courses and their students if the operation is successful, or an error message if an internal error occurs.
+=========================================================================================================================================================================================================================
+# Student API Documentation
+
+API Endpoint: /register
+HTTP Method: POST
+Headers:
+Session-Key: A string representing the session key of the student getting it as response of success login.
+Request Parameters:
+courseId: A Long representing the ID of the course to register the student to.
+
+POST http://<your-domain>/students/register?courseId=123
+Headers:
+  Session-Key: <valid-session-key>
+
+  Success Response
+Status Code: 200 OK
+Body: "Student successfully registered to the course with correct session key."
+Error Responses
+Student Not Found:
+Status Code: 404 Not Found
+Body: "Student not found"
+Course Not Found:
+Status Code: 404 Not Found
+Body: "Course not found"
+Student Already Registered for 2 Courses:
+Status Code: 400 Bad Request
+Body: "Student is already registered for 2 courses"
+Course Already Has 30 Students:
+Status Code: 400 Bad Request
+Body: "Course already has 30 students"
+
+Description: API endpoint to register a student to a course if student already register to two courses or the course have 30 student it will throw error
+=========================================================================================================================================================================================================================
+
+## Cancel Registration
+
+### Endpoint
+- **URL:** `/students/cancelRegistration`
+- **Method:** `DELETE`
+- **Content-Type:** `application/json`
+
+### Request Headers
+- **Session-Key:** The session key of the student (required).
+
+### Request Parameters
+- **courseId:** The ID of the course from which the student wants to cancel registration (required).
+
+### Responses
+
+#### Success Response
+- **Status Code:** `200 OK`
+- **Content-Type:** `application/json`
+- **Body:**
+  ```json
+  {
+    "message": "Student successfully unregistered from the course."
+  }
+
+Invalid Session Key  
+Status Code: 401 Unauthorized
+Content-Type: application/json
+Body:
+{
+  "error": "Invalid session key"
+}
+Cancellation Failed  
+Status Code: 400 Bad Request
+Content-Type: application/json
+Body:
+{
+  "error": "Cancellation failed. Ensure the student is registered for the course."
+}
+Description
+This endpoint cancels a student's registration from a course. It requires a valid session key to authenticate the student. If the session key is invalid, a 401 Unauthorized status is returned. If the cancellation is successful, a 200 OK status is returned with a success message. If the cancellation fails (e.g., the student is not registered for the course), a 400 Bad Request status is returned with an error message.
+
+=========================================================================================================================================================================================================================
+AuthController application api
+
+## Student Login
+
+### Endpoint
+- **URL:** `/auth/studentLogin`
+- **Method:** `POST`
+- **Content-Type:** `application/json`
+
+### Request Parameters
+- **specialKey:** The special key of the student (required).
+
+### Responses
+
+#### Success Response
+- **Status Code:** `200 OK`
+- **Content-Type:** `application/json`
+- **Body:**
+  ```json
+  {
+    "message": "Successfully logged in",
+    "sessionKey": "generated-session-key"
+  }
+
+
+Error Response
+Invalid Special Key
+Status Code: 401 Unauthorized
+Content-Type: application/json
+Body:
+{
+  "error": "Invalid special key"
+}
+Description
+This endpoint allows a student to log in using their special key. If the special key is valid, a session key is generated and returned along with a success message. If the special key is invalid, a 401 Unauthorized status is returned with an error message.

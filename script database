@@ -1,0 +1,32 @@
+-- Create the database
+CREATE DATABASE School;
+
+-- Switch to the School database
+USE School;
+
+-- Create the Student table
+CREATE TABLE Student (
+    id INT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    special_key VARCHAR(255) NOT NULL
+);
+
+-- Create the Course table
+CREATE TABLE Course (
+    id INT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description TEXT
+);
+
+-- Create the Enrollment table (junction table)
+CREATE TABLE Enrollment (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT NOT NULL,
+    course_id INT NOT NULL,
+    record VARCHAR(255) DEFAULT '0' NULL, -- Allow NULL and set default value to '0' -- New column for the record
+    FOREIGN KEY (student_id) REFERENCES Student(id) ON DELETE CASCADE,
+    FOREIGN KEY (course_id) REFERENCES Course(id) ON DELETE CASCADE,
+    UNIQUE (student_id, course_id)  -- Prevent duplicate enrollments
+);
+
